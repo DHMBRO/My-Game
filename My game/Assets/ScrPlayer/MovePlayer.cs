@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float SpeedMove;
+    [SerializeField] private float SpeedRun;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        MoveVertical();
+        MoveHorisontal();
+        Run();
     }
+    
+    void MoveVertical()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.localPosition += transform.forward * SpeedMove;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.localPosition -= transform.forward * SpeedMove;
+        }
+    }
+
+    void MoveHorisontal()
+    {
+
+    }
+
+    void Run()
+    {
+
+    }
+
 }
