@@ -28,12 +28,22 @@ public class MovePlayer : MonoBehaviour
 
     void MoveHorisontal()
     {
-
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.localPosition -= transform.right * SpeedMove;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.localPosition += transform.right * SpeedMove;
+        }
     }
 
     void Run()
     {
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.localPosition += transform.forward * SpeedRun;
+        }
     }
 
 }
